@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Appointment - SmartCare Clinic</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <div id="appHeader"></div>
+
+    <main class="container" style="max-width: 640px;">
+        <div class="section-header">
+            <h1 class="heading-accent">Update <span>Appointment</span></h1>
+            <a href="/pages/patientDashboard.html" class="btn btn-outline">Back to Portal</a>
+        </div>
+
+        <div id="updateAlert" class="alert" role="alert"></div>
+
+        <section class="card">
+            <form id="updateAppointmentForm">
+                <input type="hidden" id="apptId">
+                <input type="hidden" id="apptDoctorId">
+                <div class="form-group">
+                    <label for="apptDoctorName">Doctor</label>
+                    <input type="text" id="apptDoctorName" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="apptCurrentTime">Current Schedule</label>
+                    <input type="text" id="apptCurrentTime" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="newDate">New Date</label>
+                    <input type="date" id="newDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="newSlot">Available Time Slot</label>
+                    <select id="newSlot" class="form-control" required>
+                        <option value="">Select a date</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Changes</button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="/js/updateAppointment.js"></script>
+</body>
+</html>

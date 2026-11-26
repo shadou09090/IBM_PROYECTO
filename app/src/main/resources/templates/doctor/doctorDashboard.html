@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - SmartCare Clinic</title>
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}" href="/assets/css/style.css">
+    <link rel="stylesheet" th:href="@{/assets/css/doctorDashboard.css}" href="/assets/css/doctorDashboard.css">
+</head>
+<body>
+    <div id="appHeader"></div>
+
+    <main class="container">
+        <div class="section-header">
+            <h1 class="heading-accent">Doctor <span>Schedule</span></h1>
+            <button type="button" id="todayBtn" class="btn btn-primary">Today's Appointments</button>
+        </div>
+
+        <div id="doctorAlert" class="alert" role="alert"></div>
+
+        <section class="filter-bar doctor-filter-bar" aria-label="Appointment filters">
+            <input type="text" id="patientSearchInput" class="form-control" placeholder="Search by patient name...">
+            <input type="date" id="appointmentDateFilter" class="form-control">
+            <button type="button" id="clearFiltersBtn" class="btn btn-outline">Show All</button>
+        </section>
+
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Patient</th>
+                        <th>Contact</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentsTableBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="prescriptionModal" class="modal-overlay" role="dialog" aria-modal="true"
+         aria-labelledby="prescriptionModalTitle">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="prescriptionModalTitle" class="heading-accent">Add <span>Prescription</span></h3>
+                <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div id="prescriptionAlert" class="alert" role="alert"></div>
+            <form id="prescriptionForm">
+                <input type="hidden" id="rxAppointmentId">
+                <div class="form-group">
+                    <label for="rxPatientName">Patient Name</label>
+                    <input type="text" id="rxPatientName" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="rxMedication">Medication</label>
+                    <input type="text" id="rxMedication" class="form-control" required minlength="2" maxlength="150"
+                           placeholder="e.g., Amoxicillin 500mg">
+                </div>
+                <div class="form-group">
+                    <label for="rxDosage">Dosage</label>
+                    <input type="text" id="rxDosage" class="form-control" required minlength="2" maxlength="100"
+                           placeholder="e.g., 1 tablet twice daily for 7 days">
+                </div>
+                <div class="form-group">
+                    <label for="rxNotes">Doctor Notes</label>
+                    <textarea id="rxNotes" class="form-control" rows="3" maxlength="500"
+                              placeholder="Clinical instructions or follow-up notes..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Prescription</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="historyModalTitle" class="heading-accent">Patient <span>Prescriptions</span></h3>
+                <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div id="historyContent" class="prescription-history-list"></div>
+        </div>
+    </div>
+
+    <script type="module" th:src="@{/js/doctorDashboard.js}" src="/js/doctorDashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Record - SmartCare Clinic</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/doctorDashboard.css">
+</head>
+<body>
+    <div id="appHeader"></div>
+
+    <main class="container">
+        <div class="section-header">
+            <h1 class="heading-accent">Patient <span>Record</span></h1>
+            <a href="/pages/patientDashboard.html" class="btn btn-outline">Back to Portal</a>
+        </div>
+
+        <div id="recordAlert" class="alert" role="alert"></div>
+
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Appointment ID</th>
+                        <th>Patient ID</th>
+                        <th>Doctor</th>
+                        <th>Status</th>
+                        <th>Prescription</th>
+                    </tr>
+                </thead>
+                <tbody id="patientRecordBody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <div id="rxDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rxDetailTitle">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="rxDetailTitle" class="heading-accent">Prescription <span>Details</span></h3>
+                <button type="button" class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div id="rxDetailContent" class="prescription-history-list"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/patientRecord.js"></script>
+</body>
+</html>

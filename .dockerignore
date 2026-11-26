@@ -1,0 +1,13 @@
+.git/
+.github/
+.idea/
+*.iml
+**/target/
+docs/
+sql/
+src/
+.env
+.env.*
+*.log
+*.pem
+*.key

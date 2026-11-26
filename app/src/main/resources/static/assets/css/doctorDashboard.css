@@ -1,0 +1,31 @@
+.doctor-filter-bar {
+    margin-bottom: 1.5rem;
+}
+
+.doctor-filter-bar .form-control {
+    min-width: 200px;
+}
+
+.prescription-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.prescription-item {
+    background: var(--bg-mint-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+}
+
+.prescription-item h4 {
+    color: var(--primary-teal);
+    margin-bottom: 0.25rem;
+}
+
+.prescription-item p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
